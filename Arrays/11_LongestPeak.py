@@ -19,8 +19,7 @@ def longestPeak(nums):
                 if nums[k] >= nums[k - 1]:
                     break
                 currPeakLength += 1
-            if currPeakLength > maxPeakLength:
-                maxPeakLength = currPeakLength
+            maxPeakLength = max(currPeakLength, maxPeakLength)
     return maxPeakLength
 
 
@@ -32,4 +31,8 @@ nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 print(longestPeak(nums))
 
 nums = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+print(longestPeak(nums))
+
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 8]
 print(longestPeak(nums))
